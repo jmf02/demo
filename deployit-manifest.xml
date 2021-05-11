@@ -5,4 +5,5 @@
   <jee.War name="/demo" file="/target/demo-0.0.1-SNAPSHOT.war"/>
  <dependencyResolution>LATEST</dependencyResolution>
  <undeployDependencies>false</undeployDependencies>
+ </deployables>
 </udm.DeploymentPackage>
