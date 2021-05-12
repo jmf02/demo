@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <udm.DeploymentPackage version="jmfver" application="jmfapp">
- <application />
- <deployables>
-  <jee.War name="jmfwar" file="jmffile"/>
- </deployables>
- <dependencyResolution>LATEST</dependencyResolution>
- <undeployDependencies>false</undeployDependencies>
+  <application />
+  <orchestrator />
+  <deployables>
+    <tomcat.War name="jmfwar" file="jmffile">
+      <tags />
+      <scanPlaceholders>false</scanPlaceholders>
+      <preScannedPlaceholders>true</preScannedPlaceholders>
+      <placeholders />
+      <fileEncodings>
+        <entry key=".+\.properties">ISO-8859-1</entry>
+      </fileEncodings>
+    </tomcat.War>
+  </deployables>
+  <applicationDependencies />
+  <dependencyResolution>LATEST</dependencyResolution>
+  <undeployDependencies>false</undeployDependencies>
+  <templates />
+  <boundTemplates />
 </udm.DeploymentPackage>
