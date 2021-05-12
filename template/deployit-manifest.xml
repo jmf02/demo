@@ -11,6 +11,7 @@
       <fileEncodings>
         <entry key=".+\.properties">ISO-8859-1</entry>
       </fileEncodings>
+      <contextRoot>hello</contextRoot>
     </tomcat.War>
   </deployables>
   <applicationDependencies />
