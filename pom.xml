@@ -65,8 +65,8 @@
 					<phase> package </phase>
 					<configuration>
 					  <target>
-						<delete file="${project.basedir}/mondar/test.zip" />
-						<delete file="${project.basedir}/mondar/test.dar" />
+						<delete file="${project.basedir}/mondar/${project.artifactId}-${project.version}.zip" />
+						<delete file="${project.basedir}/mondar/${project.artifactId}-${project.version}.dar" />
 
 						<copy file="${project.build.Directory}/${project.artifactId}-${project.version}.war" toFile="${project.basedir}/mondar/war/${project.artifactId}-${project.version}.war" overwrite="true" />			
 						<copy file="${project.basedir}/template/deployit-manifest.xml" toFile="${project.basedir}/mondar/deployit-manifest.xml" overwrite="true" />			
@@ -78,8 +78,8 @@
 						<replace file="${project.basedir}/mondar/deployit-manifest.xml" token="jmffile"  value="war/${project.artifactId}-${project.version}.war"/>
 
 					
-						<zip basedir="${project.basedir}/mondar/" destFile="${project.basedir}/mondar/test.zip"  />							
-						<move file="${project.basedir}/mondar/test.zip" toFile="${project.basedir}/mondar/test.dar"/>
+						<zip basedir="${project.basedir}/mondar/" destFile="${project.basedir}/mondar/${project.artifactId}-${project.version}.zip"  />							
+						<move file="${project.basedir}/mondar/${project.artifactId}-${project.version}.zip" toFile="${project.basedir}/mondar/${project.artifactId}-${project.version}.dar"/>
 
 					  </target>
 					</configuration>
