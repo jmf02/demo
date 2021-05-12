@@ -56,6 +56,41 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+			
+			<plugin>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>3.0.0</version>
+				<executions>
+				  <execution>
+					<phase> package </phase>
+					<configuration>
+					  <target>
+						<delete file="${project.basedir}/mondar/test.zip" />
+						<delete file="${project.basedir}/mondar/test.dar" />
+
+						<copy file="${project.build.Directory}/${project.artifactId}-${project.version}.war" toFile="${project.basedir}/mondar/war/${project.artifactId}-${project.version}.war" overwrite="true" />			
+						<copy file="${project.basedir}/template/deployit-manifest.xml" toFile="${project.basedir}/mondar/deployit-manifest.xml" overwrite="true" />			
+
+
+						<replace file="${project.basedir}/mondar/deployit-manifest.xml" token="jmfver"  value="${project.version}"/>
+						<replace file="${project.basedir}/mondar/deployit-manifest.xml" token="jmfapp"  value="${project.artifactId}"/>
+						<replace file="${project.basedir}/mondar/deployit-manifest.xml" token="jmfwar"  value="${project.artifactId}"/>
+						<replace file="${project.basedir}/mondar/deployit-manifest.xml" token="jmffile"  value="${project.artifactId}-${project.version}"/>
+
+					
+						<zip basedir="${project.basedir}/mondar/" destFile="${project.basedir}/mondar/test.zip"  />							
+						<move file="${project.basedir}/mondar/test.zip" toFile="${project.basedir}/mondar/test.dar"/>
+
+					  </target>
+					</configuration>
+					<goals>
+					  <goal>run</goal>
+					</goals>
+				  </execution>
+				</executions>
+			  </plugin>
+
+
 
 		</plugins>
 	</build>
