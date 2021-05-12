@@ -74,8 +74,8 @@
 
 						<replace file="${project.basedir}/mondar/deployit-manifest.xml" token="jmfver"  value="${project.version}"/>
 						<replace file="${project.basedir}/mondar/deployit-manifest.xml" token="jmfapp"  value="${project.artifactId}"/>
-						<replace file="${project.basedir}/mondar/deployit-manifest.xml" token="jmfwar"  value="${project.artifactId}"/>
-						<replace file="${project.basedir}/mondar/deployit-manifest.xml" token="jmffile"  value="${project.artifactId}-${project.version}"/>
+						<replace file="${project.basedir}/mondar/deployit-manifest.xml" token="jmfwar"  value="/${project.artifactId}"/>
+						<replace file="${project.basedir}/mondar/deployit-manifest.xml" token="jmffile"  value="war/${project.artifactId}-${project.version}.war"/>
 
 					
 						<zip basedir="${project.basedir}/mondar/" destFile="${project.basedir}/mondar/test.zip"  />							
